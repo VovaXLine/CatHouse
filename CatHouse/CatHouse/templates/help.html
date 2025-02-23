@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приют котиков. Как помочь</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #fce8c5;
+        }
+
+        /* Общие стили шапки */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f29900;
+            padding: 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+
+        .title {
+            background-color: #f29900;
+            padding: 20px;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        /* Стили для кнопок */
+        button{
+            display: flex;
+            gap: 15px;
+            margin-left: auto;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 16px;
+        }
+
+        button {
+            font-weight: bold;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: none;
+            padding: 12px 20px;
+            color: #ffffff;
+            background-color: #f29900;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color:rgba(254, 161, 0, 0.65);
+        }
+
+        /* Стили для контента */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #f29900;
+            margin-bottom: 30px;
+        }
+
+        .contact-block {
+            margin-bottom: 25px;
+            margin-top: 25px;
+            padding: 15px;
+            border-left: 4px solid #f29900;
+            background-color: #f5f5f5;
+        }
+
+        .form {
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class='title'>Приют котиков «Уютный дом»</h1>
+        <div class="buttons-container">
+            <form action="http://127.0.0.1:8000//">
+                <button>Главная</button>
+            </form>
+        </div>
+    </header>
+
+    <div class="content">
+        <h2>Способы помочь нашим котикам:</h2>
+        <h3>Станьте волонтёром:</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить</button>
+        </form>
+        <div class="contact-block">
+            <h3>💳 Номер банковской карты:</h3>
+            <p>5536 9177 3151 7386</p>
+        </div>
+
+        <div class="contact-block">
+            <h3>📱 Наш Telegram:</h3>
+            <p>@Begugla123, @t.me/zmeikatg</p>
+        </div>
+    </div>
+</body>
+</html>
